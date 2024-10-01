@@ -45,3 +45,22 @@ faqs.forEach((faq) => {
     }
   });
 });
+
+
+// التعامل مع زر عرض المزيد/عرض أقل
+document.getElementById("toggleAchievements").addEventListener("click", function (e) {
+  e.preventDefault();
+  
+  const moreAchievements = document.querySelectorAll(".more-achievements");
+  const showMoreButton = document.getElementById("toggleAchievements");
+  
+  moreAchievements.forEach(function(achievement) {
+    if (achievement.style.display === "none" || achievement.style.display === "") {
+      achievement.style.display = "block"; // عرض الإنجازات الزائدة
+      showMoreButton.textContent = "عرض أقل"; // تغيير نص الزر
+    } else {
+      achievement.style.display = "none"; // إخفاء الإنجازات الزائدة
+      showMoreButton.textContent = "عرض المزيد"; // إعادة نص الزر
+    }
+  });
+});
