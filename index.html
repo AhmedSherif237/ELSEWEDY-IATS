@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>ELSEWEDY IATS</title>
+    <link rel="icon" type="image" href="images/icon.png">
 </head>
 <body>
+  <div class="loading-screen" id="loading">
+    <span class="loader"></span>
+  </div>
+
     <div class="landing">
         <div class="container">
         <header id="mainHeader">
@@ -19,7 +24,7 @@
 
             
             <ul class="navItems" id="navItems">
-                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="index.html" class="active">الرئيسية</a></li>
                 <li><a href="#vision">عن المدرسة</a></li>
                 <li><a href="#programs">البرامج الدراسية</a></li>
                 <li><a href="#gallery">الانشطة</a></li>
@@ -193,6 +198,7 @@
         <p>تاهل طالبة من مدرسة السويدي ل نهائيات المسابقة في تونس</p>
       </div>
     </div>
+
   </div>
 
   <a href="#" class="show-more" id="toggleAchievements">عرض المزيد</a>
@@ -326,6 +332,9 @@
 </footer>
 <!-- End Footer -->
 
+<button id="scrollToTopBtn" class="scroll-to-top">
+<i class="fa-solid fa-arrow-up"></i>
+</button>
     <script src="main.js"></script>
 </body>
 </html>
