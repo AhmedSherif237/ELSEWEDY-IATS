@@ -172,10 +172,6 @@ h2.main-title{
     background: var(--main-color);
   }
   
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--main-color-hov);
-  }
 /* Start Landing */
 /* Start Nav */
 .landing{
