@@ -568,7 +568,32 @@ header.scrolled {
     font-size: 25px;
     margin: 10px 0;
 }
+.achievements a.show-more{
+    padding: 10px 30px;
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    color: white;
+    border-radius: 5px;
+    display: block;
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+    transition: var(--main-transition);
+}
+.achievements a.show-more:hover{
+    background-color: white;
+    color: var(--main-color);
+}
 
+/* إخفاء العناصر الزائدة */
+.more-achievements {
+    display: none;
+  }
+  
+  .show-less {
+    display: none;
+  }
+  
 /* End Achievements */
 
  .faqs {
