@@ -67,6 +67,86 @@ h2.main-title{
     text-align: center;
     margin-bottom: 30px;
 }
+
+/* شاشة التحميل تغطي كامل الصفحة */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white; /* لون الخلفية أثناء التحميل */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* فوق جميع العناصر */
+  opacity: 1; /* الحفاظ على الشفافية 1 أثناء الظهور */
+}
+
+/* تأثير التلاشي عند الإخفاء */
+@keyframes fadeOut {
+  from {
+    opacity: 1; /* الشفافية تبدأ من 1 */
+  }
+  to {
+    opacity: 0; /* الشفافية تصل إلى 0 */
+  }
+}
+  .loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after,
+  .loader::before {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent var(--main-color) var(--main-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+  }
+  .loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: var(--main-color) var(--main-color) transparent transparent;
+    animation: rotation 1.5s linear infinite;
+  }
+      
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+      
+      
 /* End Global Rules */
 /* Start Variables */
 :root{
@@ -242,7 +322,6 @@ header.scrolled {
   
 .landing header .navItems>li>a{
     color: white;
-    text-decoration: none;
     padding: 10px 15px;
     font-weight: bold;
 }
@@ -257,8 +336,10 @@ header.scrolled {
     right: 0%;
     transition: 0.5s;
 }
- 
-.landing header .navItems>li:hover>a::after{
+
+.landing header .navItems>li:hover>a::after,
+.landing header .navItems>li>a.active::after
+{
     left: 0%;
     width: 95%;
 }
@@ -773,3 +854,34 @@ footer .container{
 
 
 /* End Footer */
+
+  /* تصميم زر التمرير إلى الأعلى */
+  .scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--main-color);
+    color: white; 
+    border: none;
+    border-radius: 50%; 
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    display: none; 
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  .scroll-to-top i{
+    color: white;
+  }
+  .scroll-to-top.show {
+    display: block;
+    opacity: 1;
+    transform: scale(1); /* الحجم العادي عند الإظهار */
+  }
+  
+  /* تأثير عند النقر على الزر */
+  .scroll-to-top:active {
+    transform: scale(0.9); /* تصغير الزر قليلاً عند النقر */
+  }
