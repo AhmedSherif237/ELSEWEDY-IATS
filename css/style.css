@@ -100,7 +100,7 @@ h2.main-title{
 /* Start Nav */
 .landing{
     height: 100vh;
-    background: url(images/landing2.jpg) fixed no-repeat;
+    background: url(../images/landing2.jpg) fixed no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
