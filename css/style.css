@@ -626,11 +626,6 @@ header.scrolled {
     grid-column: 1 / -1;
     margin-bottom: 150px;
 }
-@media (max-width: 645px){
-    .achievements .container .ach:first-child{
-        margin-bottom: 0;
-    }
-    }
 .achievements .container .ach:first-child .text h5{
     font-size: 30px;
     margin: 15px 0;
