@@ -56,23 +56,23 @@ document.getElementById("toggleAchievements").addEventListener("click", function
   
   moreAchievements.forEach(function(achievement) {
     if (achievement.style.display === "none" || achievement.style.display === "") {
-      achievement.style.display = "block"; // عرض الإنجازات الزائدة
-      showMoreButton.textContent = "عرض أقل"; // تغيير نص الزر
+      achievement.style.display = "block"; 
+      showMoreButton.textContent = "عرض أقل"; 
     } else {
-      achievement.style.display = "none"; // إخفاء الإنجازات الزائدة
-      showMoreButton.textContent = "عرض المزيد"; // إعادة نص الزر
+      achievement.style.display = "none"; 
+      showMoreButton.textContent = "عرض المزيد"; 
     }
   });
 });
 
-// إظهار الزر عند التمرير لأسفل
+
 window.onscroll = function() {
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
   if (window.scrollY > 300) {
-    scrollToTopBtn.classList.add("show");  // إظهار الزر
+    scrollToTopBtn.classList.add("show"); 
   } else {
-    scrollToTopBtn.classList.remove("show");  // إخفاء الزر
+    scrollToTopBtn.classList.remove("show");  
   }
 };
 
@@ -80,7 +80,7 @@ window.onscroll = function() {
 document.getElementById("scrollToTopBtn").addEventListener("click", function() {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"  // تمرير سلس إلى الأعلى
+    behavior: "smooth",
   });
 });
 
@@ -92,13 +92,13 @@ window.onload = function() {
   setTimeout(function() {
     // إخفاء شاشة التحميل مع تأثير التلاشي
     const loadingScreen = document.getElementById("loading");
-    loadingScreen.style.animation = "fadeOut 0.5s forwards"; // إضافة تأثير التلاشي عند الإخفاء
+    loadingScreen.style.animation = "fadeOut 0.5s forwards"; 
 
     setTimeout(function() {
-      loadingScreen.style.display = "none"; // إخفاء العنصر بعد انتهاء تأثير التلاشي
-      document.body.style.overflow = 'auto'; // إعادة تمكين التمرير
-    }, 500); // انتظار 500 مللي ثانية لتتناسب مع مدة تأثير التلاشي
-  }, 3000); // إخفاء الشاشة بعد 3 ثوانٍ
+      loadingScreen.style.display = "none"; 
+      document.body.style.overflow = 'auto'; 
+    }, 500); 
+  }, 3000); 
 };
 
 
